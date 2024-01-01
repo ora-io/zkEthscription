@@ -9,7 +9,7 @@ export class ethscriptionsProtocolCreateEthscription {
   }
 
   public static fromEvent(event: Event): ethscriptionsProtocolCreateEthscription {
-    const initialOwner = Address.fromBytes(event.topic1);
+    const initialOwner = Address.fromBytes(event.topic1.slice(12));
     const contentURI = event.data;
     return new ethscriptionsProtocolCreateEthscription(
       initialOwner,

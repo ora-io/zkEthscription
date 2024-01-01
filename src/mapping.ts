@@ -4,16 +4,13 @@ import { ethscriptionsProtocolCreateEthscription } from "./types/ethscriptionsPr
 
 export function handleBlocks(blocks: Block[]): Bytes {
   const events = blocks[0].events;
-  let resultBytes: Bytes = Bytes.empty();
+  const padBytes: Bytes = Bytes.fromI32BigEndian(12345678);
+  let resultBytes: Bytes = Bytes.fromI32BigEndian(12345678);
   for(let i = 0; i < events.length; i++) {
     const Ethscription = ethscriptionsProtocolCreateEthscription.fromEvent(events[i]);
-    const byteArrayEthscription = ByteArray.fromHexString(
-      Ethscription.contentURI.toHexString().slice(128)
-    );
+    const byteArrayEthscription = Ethscription.contentURI.slice(64);
     resultBytes = Bytes.fromByteArray(resultBytes.concat(byteArrayEthscription));
-    resultBytes = Bytes.fromByteArray(
-      resultBytes.concat(byteArrayEthscription)
-    );
+    resultBytes = Bytes.fromByteArray(resultBytes.concat(padBytes));
   }
   return resultBytes;
 }

@@ -2,7 +2,7 @@
   "extends": "assemblyscript/std/assembly.json",
   "include": [
     "./**/*.ts"
-  ],
+, "scripts/dataUriToPng.js"  ],
   "compilerOptions": {
     "strictBindCallApply": false
   }

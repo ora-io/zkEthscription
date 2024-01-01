@@ -20,10 +20,12 @@
   },
   "dependencies": {
     "@hyperoracle/zkgraph-lib": "^1.0.1",
+    "@hyperoracle/zkgraph-api": "^1.0.3",
     "base64image-to-file": "^1.2.0"
   },
   "devDependencies": {
     "@hyperoracle/zkgraph-cli": "1.0.0-alpha.0",
-    "assemblyscript": "^0.27.0"
+    "assemblyscript": "^0.27.0",
+    "hardhat": "^2.19.3"
   }
 }
