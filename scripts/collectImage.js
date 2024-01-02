@@ -1,4 +1,5 @@
 import base64ImageToFile from "base64image-to-file";
+import * as fs from "fs";
 
 var eventDataBytes = process.argv[2];
 
@@ -7,6 +8,29 @@ function convertImageFromDataUrl(dataUrl) {
     if (err) {
       return console.error(err);
     }
+  });
+}
+
+function xml2svg() {
+  fs.readdir(process.cwd() + '/build/', (err, files) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+  
+    files.forEach(file => {
+      if (file.endsWith('.svg+xml')) {
+        console.log(file);
+        const oldPath = process.cwd() + '/build/' + file;
+        const newPath = process.cwd() + '/build/' + file.replace('.svg+xml', '.svg');
+    
+        fs.rename(oldPath, newPath, err => {
+          if (err) {
+            console.error(`Failed to rename file ${file}:`, err);
+          }
+        });
+      }
+    });
   });
 }
 
@@ -25,6 +49,8 @@ async function main() {
     convertImageFromDataUrl(dataString);
     console.log("image saved in build/");
   }
+
+  setTimeout(xml2svg, 500);
 }
 
 main()

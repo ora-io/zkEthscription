@@ -5,11 +5,11 @@ description: "This zkgraph is image collection of ethscription."
 repository: https://github.com/liriu/zkEthscription
 dataSources:
   - kind: ethereum
-    network: mainnet
+    network: sepolia
     event:
-      - address: '0xa0e22e94433779c859dddeeaf8c6f15b16b662f4'
+      - address: '0xfa002dc692d045afde265d5eac09d012c1af50e8'
         events: 
-          - '0x665fba0baf3dc33e9943340197893ac16f56482c2defb8de60f944987fee451c'
+          - 'ethscriptions_protocol_CreateEthscription(address,string)'
 
 mapping:
   language: wasm/assemblyscript
