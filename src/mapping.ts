@@ -1,5 +1,5 @@
 //@ts-ignore
-import { Bytes, Block, ByteArray } from "@hyperoracle/zkgraph-lib";
+import { Bytes, Block } from "@hyperoracle/zkgraph-lib";
 import { ethscriptionsProtocolCreateEthscription } from "./types/ethscriptionsProtocolCreateEthscription";
 
 export function handleBlocks(blocks: Block[]): Bytes {
