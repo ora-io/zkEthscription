@@ -7,7 +7,7 @@ dataSources:
   - kind: ethereum
     network: mainnet
     event:
-      - address: '0x20bE9c12f3C574EaCEd3FB540af6EF874Cac5C02'
+      - address: '0x20be9c12f3c574eaced3fb540af6ef874cac5c02'
         events: 
           - 'ethscriptions_protocol_CreateEthscription(address,string)'
 

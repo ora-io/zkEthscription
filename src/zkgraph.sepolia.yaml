@@ -1,7 +1,7 @@
 specVersion: 0.0.2
 apiVersion: 0.0.2
-name: ethscription
-description: "This zkgraph is image collection of ethscription."
+name: ethscriptions
+description: "This demo accesses ESIP-3 compatible Ethscription created token data at a specific block height."
 repository: https://github.com/liriu/zkEthscription
 dataSources:
   - kind: ethereum
